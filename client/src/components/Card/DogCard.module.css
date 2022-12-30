@@ -1,0 +1,32 @@
+.img {
+    width: 10.4rem;
+    height: 9rem;
+}
+
+.card {
+    background-color: rgb(255, 255, 255);
+    width: 20vw;
+    height: 36vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    border-radius: 20%;
+    font-size: .8rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.card:hover{
+    cursor: pointer;
+    background:rgb(206, 197, 197);
+}
+
+.navLink:link, .navLink:visited, .navLink:active {
+    text-decoration:none;
+    color: #1a1515
+}
+.navLink:hover {
+    color: #333832;
+}
+
+
