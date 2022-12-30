@@ -16,21 +16,21 @@ export const PAGE = 'PAGE';
 
 export const getAllDogs = () => {
     return async function (dispatch) {
-        const response = await axios.get('http://localhost:3001/dogs')
+        const response = await axios.get('/dogs')
         return dispatch({type: GET_ALL_DOGS, payload: response.data})
     }
 };
 
 export const getTemperaments = () => {
     return async function (dispatch) {
-        const response = await axios.get('http://localhost:3001/temperaments')
+        const response = await axios.get('/temperaments')
         return dispatch({type: GET_TEMPERAMENTS, payload: response.data})
     }
 };
 
 export const getDogDetails = (id) => {
     return async function (dispatch) {
-        const response = await axios.get(`http://localhost:3001/dogs/${id}`);
+        const response = await axios.get(`/dogs/${id}`);
         return dispatch({ type: GET_DOGS_DETAILS, payload: response.data });
     }
 };
@@ -48,7 +48,7 @@ export const searchByName = (name) => {
     // }
 
     return function (dispatch) {
-        return axios.get(`http://localhost:3001/dogs?name=${name}`)
+        return axios.get(`/dogs?name=${name}`)
         .then(response => dispatch({type: SEARCH_BY_NAME, payload: response.data}))
         .catch(error => dispatch({type: SEARCH_BY_NAME, payload: error.response.data}))
     }
@@ -57,7 +57,7 @@ export const searchByName = (name) => {
 export const dogCreate = (info) => {
     return async function (dispatch) {
         try {
-            const response = await axios.post('http://localhost:3001/dogs', info);
+            const response = await axios.post('/dogs', info);
             dispatch({type: CREATE_DOG, payload: response.data })
         } catch (error) {
             return dispatch({ type: CREATE_DOG, payload: error.response.data });
@@ -68,7 +68,7 @@ export const dogCreate = (info) => {
 export const deleteDog = (id) => {
     return async function(dispatch) {
         try {
-            let response = await axios.delete(`http://localhost:3001/dogs/${id}`)
+            let response = await axios.delete(`/dogs/${id}`)
             return dispatch({type: DELETE_DOG, payload: response.data})
         } catch (error) {
             return dispatch({type: DELETE_DOG, payload: error.response.data})
