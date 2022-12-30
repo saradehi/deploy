@@ -48,8 +48,8 @@
     }
 
     .div{
-        width: 70%;
-        height: 40%;
+        min-height: 40%;
+        min-width: 70%;
     }
 
     .maker{
