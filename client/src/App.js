@@ -8,7 +8,7 @@ import Home from './components/Home/Home';
 import LandingPage from './components/LandingPage/LandingPage';
 import NavBar from './components/Nav/Nav';
 import axios from 'axios';
-axios.defaults.baseURL = 'http://localhost:3001/'
+axios.defaults.baseURL = 'https://deploy-production-6e2f.up.railway.app/'
 
 
 function App() {
