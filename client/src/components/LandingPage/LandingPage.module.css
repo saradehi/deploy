@@ -35,4 +35,30 @@
     margin-right: 10px;
 }
 
+@media (max-width: 600px){
+
+    
+    .back_video{
+        display: none;
+    }
+    
+    body::before{
+        background-image: none;
+        padding-left: 0;
+    }
+
+    .div{
+        width: 70%;
+        height: 40%;
+        margin-left: -8rem;
+        margin-top: -8rem;
+    }
+
+    .maker{
+        position: initial;
+        align-self: auto;
+    }
+
+}
+
 
