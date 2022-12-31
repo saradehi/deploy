@@ -81,6 +81,9 @@ const DogDetails = ({match}) => {
                                 <p>This action cannot be undone</p>
                             </div>
                         }
+                        <div className={`${style.space}`}>
+                            
+                        </div>
                     </div>
                 </>
             }
