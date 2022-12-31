@@ -131,6 +131,7 @@ button:hover {
     }
     .containerFilter{
         height: auto;
+        margin: auto;
     }
     .containerRender{
         display: flex;
