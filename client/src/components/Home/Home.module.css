@@ -154,4 +154,8 @@ button:hover {
         width: 70vw;
         align-items: center;
     }
+
+    .search_container{
+        flex-direction: column-reverse;
+    }
 }
