@@ -65,7 +65,6 @@ button:hover {
 .containerSecond {
     display: flex;
     flex-direction: row;
-    width: 90;
     height: 80vh;
     position: relative
 }
@@ -78,11 +77,10 @@ button:hover {
     height: 30vh;
     max-width: 10rem;
     border-radius: 40px;
-    margin: auto;
-    
+    margin: auto 1rem;
 }
 .containerRender {
-    min-width: 50%;
+    min-width: 80%;
 }
 
 .filterBy {
