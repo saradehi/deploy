@@ -1,12 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Laila:wght@500&display=swap');
 
+html{
+    width: 100%;
+}
 
 body {
     background-image: url('../LandingPage/img/Depositphotos_230107080_XL.jpg');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size:cover;
     position: relative;
     height: 100vh;
+    width: 100%;
     font-family: 'Laila', sans-serif;
 }
 
@@ -52,10 +56,9 @@ button:hover {
 }
 
 .mainContainer {
-    padding: 20px;
     display: inline-flex;
     flex-direction: column;
-    width: 100vw;
+    width: 100%;
     position: relative;
 }
 
@@ -79,8 +82,7 @@ button:hover {
     
 }
 .containerRender {
-    width: 70rem;
-    padding-right: 2rem;
+    min-width: 50%;
 }
 
 .filterBy {
@@ -121,4 +123,36 @@ button:hover {
 
 .loading {
     justify-content: center;
+}
+
+
+@media (max-width: 600px){
+    .containerSecond{
+        flex-direction: column;
+        min-width: 10rem;
+    }
+    .containerFilter{
+        height: auto;
+    }
+    .containerRender{
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100vw;
+    }
+    .container{
+        flex-direction: column;
+        align-content: center;
+        width: 100vw;
+    }
+    .mainContainer{
+        padding: 0;
+    }
+    .loading{
+        width: 100vw;
+    }
+
+    .filterBy{
+        width: 70vw;
+        align-items: center;
+    }
 }

@@ -24,7 +24,6 @@
 }
 
 .back_video {
-    opacity: 0.8;
     position: absolute;
     height: 100vh;
 }
@@ -58,5 +57,4 @@
     }
 
 }
-
 

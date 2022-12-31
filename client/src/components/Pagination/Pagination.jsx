@@ -9,7 +9,7 @@ const Pagination = ({dogsPerPage, dogs, pagination}) => {
     }
 
     return (
-        <div >
+        <div className={`${style.pagination}`} >
             <ul className={`${style.list}`}>
                 {pageNumbers && pageNumbers.map(num => (
                             <li className={`${style.items}`} key={num}>

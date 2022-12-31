@@ -22,3 +22,9 @@
     font-size: large
 }
 
+@media (max-width: 600px){
+    .nav{
+        width: 100vw;
+    }
+}
+
