@@ -24,7 +24,7 @@ const CreateDog = () => {
         temperament: [],
         image: ''
     });
-    let uniques = [... new Set(input.temperament)];
+    let uniques = [...new Set(input.temperament)];
     let filtered = uniques.filter(ele => ele !== '');
 
     const regularExp = '^[ a-zA-ZñÑáéíóúÁÉÍÓÚ]+$';
