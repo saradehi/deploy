@@ -23,11 +23,12 @@ const DogDetails = ({match}) => {
 
 
     useEffect(() => {
-        dispatch(getDogDetails(dogId))
-        setTimeout(() => {
-            dispatch(loading(false))
-        }, 900)
-        setDeleted(false)
+      dispatch(getDogDetails(dogId));
+      setTimeout(() => {
+        dispatch(loading(false));
+      }, 900);
+      setDeleted(false);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const handlerDelete = (event) => {

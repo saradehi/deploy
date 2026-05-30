@@ -31,14 +31,15 @@ const Home = () => {
 
 
     useEffect(() => {
-        dispatch(getTemperaments());
-        if(dogs.length < 1) {
-            dispatch(getAllDogs())
-        }
-        setTimeout(() => {
-            dispatch(loadingHome(false))
-        }, 900);
-        dispatch(loading(true))
+      dispatch(getTemperaments());
+      if (dogs.length < 1) {
+        dispatch(getAllDogs());
+      }
+      setTimeout(() => {
+        dispatch(loadingHome(false));
+      }, 900);
+      dispatch(loading(true));
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
 
     const handlerClick = (event) => {

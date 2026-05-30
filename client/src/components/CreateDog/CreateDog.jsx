@@ -217,9 +217,10 @@ const CreateDog = () => {
     }
 
     useEffect(() => {
-        dispatch(getTemperaments())
-        setShow(false)
-        setErrors({})
+      dispatch(getTemperaments());
+      setShow(false);
+      setErrors({});
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
