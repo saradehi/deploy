@@ -37,26 +37,21 @@ const {Dog, Temperament} = require('../db');
 
 const getDogsApi = async () => {
   try {
-    // Usamos la API_KEY de las variables de entorno de Render
-    const API_KEY = process.env.API_KEY;
 
-    // Hacemos la petición a la API
     const response = await axios.get(
       `https://api.thedogapi.com/v1/breeds?api_key=${API_KEY}`,
     );
 
-    // 🚨 LOG DE CONTROL: Esto nos va a mostrar en Render qué llegó realmente
-    console.log("=== CONTROL DE DATOS ===");
-    console.log("¿Es un Array?:", Array.isArray(response.data));
-    console.log("Contenido de response.data:", response.data);
-
-    // Si por alguna razón no es un array, frenamos acá para que no explote la app
+    
     if (!Array.isArray(response.data)) {
-      console.log("⚠️ La API no devolvió un array válido.");
+      console.log(
+        "--- ¡ALERTA! El backend recibió la API Key pero no un Array ---",
+      );
+      console.log("Respuesta real de la API:", response.data);
       return [];
     }
 
-    // Si es un array, mapeamos normalmente sin el await que fallaba antes
+    
     const res = response.data.map((ele) => {
       let arrWeight = ele.weight?.metric
         ? ele.weight.metric.split(" - ")
@@ -71,21 +66,21 @@ const getDogsApi = async () => {
         weight_max: arrWeight[1] ? arrWeight[1] : "0",
         life_span: ele.life_span,
         temperament: ele.temperament,
-        image: ele.image?.url || "", // Agregamos un condicional por si algún perro viene sin foto
+        image: ele.image?.url || "",
       };
     });
 
     return res;
   } catch (error) {
-    // 🚨 SI LA API DA ERROR (EJ: CREDENCIALES MALAS), MUESTRA EL ERROR REAL ACÁ:
-    console.log("=== ERROR AL LLAMAR A THE DOG API ===");
+    
+    console.log("=== ERROR EN LA PETICIÓN A THE DOG API ===");
     if (error.response) {
-      console.log("Status del error:", error.response.status);
-      console.log("Data del error de la API:", error.response.data);
+      console.log("Código de estado HTTP:", error.response.status);
+      console.log("Detalle enviado por la API:", error.response.data);
     } else {
-      console.log("Mensaje de error general:", error.message);
+      console.log("Error general del servidor:", error.message);
     }
-    return []; // Devolvemos un array vacío seguro para que no se caiga el server
+    return []; 
   }
 };
 

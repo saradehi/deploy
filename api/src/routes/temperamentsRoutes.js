@@ -12,7 +12,7 @@ router.get('/', async(req, res) => {
         console.error("--- ERROR EN LA RUTA DE TEMPERAMENTS ---");
         console.error(error.message);
 
-        // Cambiamos a 500 (Internal Server Error) para no confundir con páginas no encontradas
+        
         res.status(500).send(error.message);
         // res.status(404).send(error.message);
     }
