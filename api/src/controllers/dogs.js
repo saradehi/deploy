@@ -12,7 +12,7 @@ const getDogsApi = async() => {
         throw new Error("Can't find dog")
     }
     else {
-        const res = await url.data.map(ele => {
+        const res = url.data.map(ele => {
 
             let arrWeight = ele.weight.metric.split(' - ')
     
